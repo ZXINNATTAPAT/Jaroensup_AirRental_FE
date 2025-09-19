@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import LINE_QR_CODE from "../assets/images/Line/LINE_QR.png";
 const translations = {
