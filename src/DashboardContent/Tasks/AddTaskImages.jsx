@@ -1,4 +1,3 @@
-import React from 'react'
 import TaskImages from '../../pages/History/TaskImages'
 const AddTaskImages = () => {
   return (

@@ -8,6 +8,7 @@ import {
     Font,
   } from "@react-pdf/renderer";
   import { FileText, RotateCw } from "lucide-react";
+  import PropTypes from "prop-types";
   
   // font thai ตรง src
   Font.register({
@@ -141,6 +142,43 @@ import {
         </PDFDownloadLink>
       </div>
     );
+  };
+
+  // PropTypes validation
+  OrderInvoice.propTypes = {
+    order: PropTypes.shape({
+      order_id: PropTypes.string,
+      firstname: PropTypes.string,
+      lastname: PropTypes.string,
+      created_at: PropTypes.string,
+      total_price: PropTypes.number,
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          product_name: PropTypes.string,
+          quantity: PropTypes.number,
+          price: PropTypes.number,
+          total_price: PropTypes.number,
+        })
+      ),
+    }).isRequired,
+  };
+
+  OrderReceipt.propTypes = {
+    order: PropTypes.shape({
+      order_id: PropTypes.string,
+      firstname: PropTypes.string,
+      lastname: PropTypes.string,
+      created_at: PropTypes.string,
+      total_price: PropTypes.number,
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          product_name: PropTypes.string,
+          quantity: PropTypes.number,
+          price: PropTypes.number,
+          total_price: PropTypes.number,
+        })
+      ),
+    }).isRequired,
   };
   
   export default OrderReceipt;
