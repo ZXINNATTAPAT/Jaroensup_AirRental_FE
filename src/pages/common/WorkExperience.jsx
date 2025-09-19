@@ -7,14 +7,14 @@ import Loading from "../../components/Loading";
 
 const translations = {
   th: {
-    header: "ผลงานเก่าของเรา",
+    header: "ผลงานของเรา",
     subText: "สำรวจโครงการและประสบการณ์สำคัญที่เรามีร่วมกับบริษัทต่าง ๆ",
     details: "ดูรายละเอียด",
     loading: "กำลังโหลดข้อมูล...",
     error: "เกิดข้อผิดพลาดในการโหลดข้อมูล",
   },
   en: {
-    header: "Our Past Work",
+    header: "Our Work",
     subText: "Explore some of the significant projects we've had with various companies.",
     details: "View Details",
     loading: "Loading data...",
@@ -73,29 +73,33 @@ const WorkExperience = () => {
           </header>
 
           <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {workExperiences.map(({ id, images, companyName, projectTitle }) => (
-              <div
-                key={id}
-                className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow"
-              >
-                <img
-                  src={images[0] || "https://via.placeholder.com/300"}
-                  alt={companyName}
-                  className="w-full h-48 object-cover cursor-pointer"
-                  onClick={() => setSelectedImage(images[0])}
-                />
-                <div className="p-2">
-                  <div className="flex justify-end">
-                    <Link
-                      to={`/experience/${id}`}
-                      className="btn bg-blue hover:bg-blue text-white px-4 py-2 rounded-lg"
-                    >
-                      {translations[language].details}
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
+            {workExperiences.map(({ id, images, company_name, project_title }) => (
+  <div
+    key={id}
+    className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow"
+  >
+    <img
+      src={images[0] || "https://via.placeholder.com/300"}
+      alt={company_name}
+      className="w-full h-48 object-cover cursor-pointer"
+      onClick={() => setSelectedImage(images[0])}
+    />
+    <div className="p-4">
+      <h2 className="text-lg font-semibold mb-2 text-gray-800 line-clamp-2">
+        {project_title}
+      </h2>
+      <div className="flex justify-end">
+        <Link
+          to={`/experience/${id}`}
+          className="btn bg-blue hover:bg-blue text-white px-4 py-2 rounded-lg"
+        >
+          {translations[language].details}
+        </Link>
+      </div>
+    </div>
+  </div>
+))}
+
           </section>
 
           {selectedImage && (

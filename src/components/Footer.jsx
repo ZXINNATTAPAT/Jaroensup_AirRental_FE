@@ -23,7 +23,7 @@ const translations = {
   th: {
     services: "บริการ",
     branding: "บริการของเรา",
-    design: "ผลงานเก่าของเรา",
+    design: "ผลงานของเรา",
     marketing: "สมัครเป็นช่างภายนอก",
     advertisement: "การโฆษณา",
     company: "บริษัท",

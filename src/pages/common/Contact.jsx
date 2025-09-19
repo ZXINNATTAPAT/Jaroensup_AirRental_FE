@@ -6,8 +6,8 @@ const translations = {
   th: {
     contactUs: "ติดต่อเรา",
     description: "สำรวจโครงการและประสบการณ์สำคัญที่เรามีร่วมกับบริษัทต่าง ๆ",
-    companyName: "ห้างร้าน เจริญทรัพย์",
-    address: "เลขที่ 425 ถ.นาคนิวาศ แขวงลาดพร้าว เขตลาดพร้าว กรุงเทพฯ 10230",
+    companyName: "เจริญทรัพย์",
+    address: "เลขที่ 448 ถ.นาคนิวาส แขวงลาดพร้าว เขตลาดพร้าว กรุงเทพฯ 10230",
     contactInfo: "ช่องทางการติดต่อ",
     phone: "โทรศัพท์",
     email: "อีเมล",
@@ -71,7 +71,7 @@ const Contact = () => {
             <h3 className="text-xl font-semibold mb-2">{translations[language].contactInfo}</h3>
             <ul className="list-disc list-inside text-gray-700">
               <li>
-                {translations[language].phone}: 086-975-0664
+                {translations[language].phone}: 086-975-0664 (คุณหมวย)
               </li>
               {/* <li>
                 {translations[language].email}: contact@example.com

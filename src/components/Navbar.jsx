@@ -142,19 +142,19 @@ const Navbar = () => {
                 {/*<li>
                   <Link to="/product">{translations[language].product}</Link>
                 </li>*/}
-                <li>
+                {/*<li>
                   <Link to="/services">{translations[language].services}</Link>
-                </li>
+                </li>*/}
                 <li>
                   <Link to="/experience">
                     {translations[language].experience}
                   </Link>
                 </li>
-                <li>
+                {/*<li>
                   <Link to="/register-tech">
                     {translations[language].registerTech}
                   </Link>
-                </li>
+                </li>*/}
                 <li>
                   <Link to="/contact">{translations[language].contact}</Link>
                 </li>
@@ -174,17 +174,17 @@ const Navbar = () => {
             {/*<li>
               <Link to="/product">{translations[language].product}</Link>
             </li>*/}
-            <li>
+            {/*<li>
               <Link to="/services">{translations[language].services}</Link>
-            </li>
+            </li>*/}
             <li>
               <Link to="/experience">{translations[language].experience}</Link>
             </li>
-            <li>
+            {/*<li>
               <Link to="/register-tech">
                 {translations[language].registerTech}
               </Link>
-            </li>
+            </li>*/}
             <li>
               <Link to="/contact">{translations[language].contact}</Link>
             </li>
@@ -194,7 +194,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end ">
-          <Link  to="/checkout"><MdOutlineShoppingCart className="text-xl cursor-pointer"/></Link>
+          {/*<Link  to="/checkout"><MdOutlineShoppingCart className="text-xl cursor-pointer"/></Link>*/}
           <button
             onClick={toggleLanguage}
             className="badge badge-outline cursor-pointer p-4 text-sm mx-2"
