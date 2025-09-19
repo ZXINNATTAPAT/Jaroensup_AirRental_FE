@@ -8,6 +8,7 @@ import {
   Font,
 } from "@react-pdf/renderer";
 import { FileText, RotateCw } from "lucide-react";
+import PropTypes from "prop-types";
 
 // font thai ตรง src
 Font.register({
@@ -171,6 +172,55 @@ const BookingPDF = ({ task }) => {
       </PDFDownloadLink>
     </div>
   );
+};
+
+// PropTypes validation
+BookingInvoice.propTypes = {
+  task: PropTypes.shape({
+    task_id: PropTypes.string,
+    organization_name: PropTypes.string,
+    type_name: PropTypes.string,
+    firstname: PropTypes.string,
+    lastname: PropTypes.string,
+    phone: PropTypes.string,
+    address: PropTypes.string,
+    quantity_used: PropTypes.number,
+    total: PropTypes.number,
+    rentalDetails: PropTypes.arrayOf(
+      PropTypes.shape({
+        rental_start_date: PropTypes.string,
+        rental_end_date: PropTypes.string,
+        product_name: PropTypes.string,
+        total_quantity_used: PropTypes.number,
+        average_price: PropTypes.number,
+        total_amount: PropTypes.number,
+      })
+    ),
+  }).isRequired,
+};
+
+BookingPDF.propTypes = {
+  task: PropTypes.shape({
+    task_id: PropTypes.string,
+    organization_name: PropTypes.string,
+    type_name: PropTypes.string,
+    firstname: PropTypes.string,
+    lastname: PropTypes.string,
+    phone: PropTypes.string,
+    address: PropTypes.string,
+    quantity_used: PropTypes.number,
+    total: PropTypes.number,
+    rentalDetails: PropTypes.arrayOf(
+      PropTypes.shape({
+        rental_start_date: PropTypes.string,
+        rental_end_date: PropTypes.string,
+        product_name: PropTypes.string,
+        total_quantity_used: PropTypes.number,
+        average_price: PropTypes.number,
+        total_amount: PropTypes.number,
+      })
+    ),
+  }).isRequired,
 };
 
 export default BookingPDF;

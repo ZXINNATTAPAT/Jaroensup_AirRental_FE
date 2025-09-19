@@ -1,4 +1,3 @@
-import React from 'react'
 import RegisterToTech from '../../pages/Authentication/RegisterToTech'
 
 const AddApplicant = () => {

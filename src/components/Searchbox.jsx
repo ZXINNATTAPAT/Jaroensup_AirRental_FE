@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useMap } from "react-leaflet";
 import axios from "axios";
+import PropTypes from "prop-types";
 
 const Searchbox = ({ onSelectLocation }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -73,6 +74,10 @@ const Searchbox = ({ onSelectLocation }) => {
       )}
     </div>
   );
+};
+
+Searchbox.propTypes = {
+  onSelectLocation: PropTypes.func.isRequired,
 };
 
 export default Searchbox;

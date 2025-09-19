@@ -1,7 +1,8 @@
 // AuthContext.js
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import Cookies from "universal-cookie";
 import { jwtDecode } from "jwt-decode";
+import PropTypes from "prop-types";
 
 const AuthContext = createContext();
 
@@ -20,6 +21,10 @@ export const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
   );
+};
+
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export const useAuth = () => {

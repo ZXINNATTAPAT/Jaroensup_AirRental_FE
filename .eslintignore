@@ -1,0 +1,13 @@
+# Three.js model files (not React components)
+public/models/**/*.jsx
+public/models/unUseModels/**/*.jsx
+
+# Build outputs
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Other
+*.min.js

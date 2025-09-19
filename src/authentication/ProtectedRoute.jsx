@@ -1,5 +1,5 @@
-import React from 'react';
 import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Login from '../pages/Authentication/Login';
 import AccessDenied from './AccessDenied';
 import Cookies from 'universal-cookie';
@@ -34,6 +34,10 @@ const ProtectedRoute = ({ children }) => {
     // If no token is found, redirect to login
     return <Login />;
   }
+};
+
+ProtectedRoute.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default ProtectedRoute;
