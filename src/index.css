@@ -4,3 +4,145 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --color-primary: #3b82f6;
+  --color-secondary: #f59e0b;
+  --color-accent: #1e40af;
+  --color-gold: #f59e0b;
+  --color-blue: #3b82f6;
+  --color-blue-dark: #1e40af;
+}
+
+/* Custom Component Classes */
+@layer components {
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-blue-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-gold-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-gold-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2;
+  }
+  
+  .btn-outline-primary {
+    @apply border-2 border-blue-500 text-blue-500 px-4 py-2 rounded-lg font-medium hover:bg-blue-500 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+  
+  .btn-outline-secondary {
+    @apply border-2 border-gold-500 text-gold-500 px-4 py-2 rounded-lg font-medium hover:bg-gold-500 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2;
+  }
+
+  /* Card Styles */
+  .card-elegant {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .card-gold-accent {
+    @apply bg-white rounded-xl shadow-sm border-2 border-gold-200 hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .card-blue-accent {
+    @apply bg-white rounded-xl shadow-sm border-2 border-blue-200 hover:shadow-md transition-shadow duration-200;
+  }
+
+  /* Gradient Backgrounds */
+  .bg-gradient-gold {
+    @apply bg-gradient-to-r from-gold-400 to-gold-600;
+  }
+  
+  .bg-gradient-blue {
+    @apply bg-gradient-to-r from-blue-400 to-blue-600;
+  }
+  
+  .header-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-blue-800;
+  }
+  
+  .footer-gradient {
+    @apply bg-gradient-to-r from-blue-700 to-blue-900;
+  }
+
+  /* Text Gradients */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-500 to-gold-700 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent;
+  }
+
+  /* Badge Styles */
+  .badge-gold {
+    @apply bg-gold-100 text-gold-800 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .badge-blue {
+    @apply bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  /* Navigation Styles */
+  .nav-link {
+    @apply text-gray-600 hover:text-blue-600 transition-colors duration-200 font-medium;
+  }
+  
+  .nav-link-active {
+    @apply text-blue-600 font-semibold;
+  }
+
+  /* Input Styles */
+  .input-elegant {
+    @apply border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200;
+  }
+
+  /* Table Styles */
+  .table-elegant {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden;
+  }
+  
+  .table-elegant thead {
+    @apply bg-gray-50;
+  }
+  
+  .table-elegant th {
+    @apply px-4 py-3 text-left text-sm font-semibold text-gray-700 border-b border-gray-200;
+  }
+  
+  .table-elegant td {
+    @apply px-4 py-3 text-sm text-gray-600 border-b border-gray-100;
+  }
+  
+  .table-elegant tbody tr:hover {
+    @apply bg-gray-50;
+  }
+
+  /* Text Shadow */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Scrollbar Styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
