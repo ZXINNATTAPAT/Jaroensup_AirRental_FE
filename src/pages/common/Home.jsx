@@ -6,9 +6,10 @@ import Cookies from "universal-cookie";
 
 const translations = {
   th: {
-    heroTitle: "บริการให้เช่าแอร์ขนาดใหญ่",
+    heroTitle: "บริการให้เช่าเครื่องปรับอากาศขนาดใหญ่ พร้อมบริการติดตั้ง",
     heroSubtitle: "5 ตัน • 10 ตัน • 20 ตัน",
-    heroDescription: "สำหรับงานอีเวนต์ งานแต่งงาน งานบวช และงานขนาดใหญ่ทุกประเภท พร้อมบริการติดตั้งโดยทีมงานมืออาชีพ",
+    heroDescription:
+      "สำหรับงานอีเวนต์ งานแต่งงาน งานบวช และงานขนาดใหญ่ทุกประเภท พร้อมบริการติดตั้งโดยทีมงานมืออาชีพ",
     viewServices: "ดูบริการ",
     contactUs: "ติดต่อเรา",
     getQuote: "ขอใบเสนอราคา",
@@ -16,7 +17,8 @@ const translations = {
   en: {
     heroTitle: "Large Air Conditioning Rental Service",
     heroSubtitle: "5 Ton • 10 Ton • 20 Ton",
-    heroDescription: "For events, weddings, ceremonies, and all types of large-scale projects with professional installation team",
+    heroDescription:
+      "For events, weddings, ceremonies, and all types of large-scale projects with professional installation team",
     viewServices: "View Services",
     contactUs: "Contact Us",
     getQuote: "Get Quote",
@@ -46,96 +48,106 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative overflow-hidden ">
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/src/assets/images/IMG_0848.jpg)',
+            backgroundImage: "url(/src/assets/images/IMG_0848.jpg)",
             opacity: 0.95,
-            height: '45vh'
+            height: "45vh",
           }}
         ></div>
 
-
-        {/* <div className="absolute inset-0 bg-black/20"></div> */}
         <div className="relative isolate px-6 pt-8 lg:px-8">
-          <div className="mx-auto max-w-7xl py-16 sm:py-24 lg:py-20">
-            <div className="text-left max-w-2xl bg-white/85 backdrop-blur-sm rounded-2xl p-6 shadow-2xl">
-                <h1 className="text-xl font-bold tracking-tight text-blue-700 sm:text-3xl lg:text-4xl">
-                {translations[language].heroTitle}
-              </h1>
-              <div className="mt-4 flex items-center space-x-2">
-                <div className="bg-yellow-500 rounded-full px-3 py-1.5 shadow-lg">
-                  <span className="text-sm font-semibold text-white">5 ตัน</span>
+          <div className="mx-auto max-w-7xl py-16 sm:py-24 lg:py-30">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              {/* Left Side - Text Content */}
+              <div className="text-left space-y-6">
+                <div className="bg-white/85 backdrop-blur-sm rounded-2xl p-6 shadow-2xl">
+                  <h1 className="text-xl font-bold tracking-tight text-black sm:text-3xl lg:text-3xl">
+                    {translations[language].heroTitle}
+                  </h1>
+                  <div className="mt-4 flex items-center space-x-2">
+                    <div className="bg-yellow-500 rounded-full px-3 py-1.5 shadow-lg">
+                      <span className="text-sm font-semibold text-white">
+                        5 ตัน
+                      </span>
+                    </div>
+                    <div className="bg-yellow-500 rounded-full px-3 py-1.5 shadow-lg">
+                      <span className="text-sm font-semibold text-white">
+                        10 ตัน
+                      </span>
+                    </div>
+                    <div className="bg-yellow-500 rounded-full px-3 py-1.5 shadow-lg">
+                      <span className="text-sm font-semibold text-white">
+                        20 ตัน
+                      </span>
+                    </div>
+                  </div>
+                  <p className="mt-4 text-base leading-7 text-black">
+                    {translations[language].heroDescription}
+                  </p>
                 </div>
-                <div className="bg-yellow-500 rounded-full px-3 py-1.5 shadow-lg">
-                  <span className="text-sm font-semibold text-white">10 ตัน</span>
-                </div>
-                <div className="bg-yellow-500 rounded-full px-3 py-1.5 shadow-lg">
-                  <span className="text-sm font-semibold text-white">20 ตัน</span>
-                </div>
-              </div>
-              <p className="mt-4 text-base leading-7 text-blue-600">
-                {translations[language].heroDescription}
-              </p>
-            </div>
-          </div>
-        </div><br/><br/>
 
-        
+                {/* Contact Banner */}
+                <div className="bg-gradient-to-r from-blue-100 via-blue-50 to-blue-200 rounded-2xl p-6 shadow-lg">
+                  <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                    {/* Left Section - Contact & Call-to-Action */}
+                    <div className="text-center md:text-left">
+                      <p className="text-lg font-semibold">
+                        <span className="text-black">เช่า-ซื้อสินค้า</span>
+                        <span className="bg-red-600 text-white px-3 py-1 rounded-lg ml-2">
+                          สอบถามข้อมูลเพิ่มเติม
+                        </span>
+                      </p>
+                      <div className="flex items-center justify-center md:justify-start space-x-4 mt-3">
+                        <a
+                          href="tel:0869750664"
+                          className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 transition-colors duration-200"
+                        >
+                          <span>📞</span>
+                          <span>คลิกโทร</span>
+                        </a>
+                        <div className="text-2xl font-bold text-black">
+                          086-975-0664
+                        </div>
+                      </div>
+                    </div>
 
-        {/* Contact Banner */}
-        <div className="w-full  py-6 shadow-lg">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-              
-              {/* Left Section - Contact & Call-to-Action */}
-              <div className="text-center md:text-left">
-                <p className="text-lg font-semibold">
-                  <span className="text-blue-700">เช่า-ซื้อสินค้า</span>
-                  <span className="text-red-600 ml-2">สอบถามข้อมูลเพิ่มเติม</span>
-                </p>
-                <div className="flex items-center justify-center md:justify-start space-x-4 mt-3">
-                  <a
-                    href="tel:0869750664"
-                    className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 transition-colors duration-200"
-                  >
-                    <span>📞</span>
-                    <span>คลิกโทร</span>
-                  </a>
-                  <div className="text-4xl font-bold text-blue-700">
-                    086-975-0664
+                    {/* Middle Section - QR Code */}
+                    <div className="bg-blue-800 rounded-lg p-4 flex items-center space-x-4">
+                      <img
+                        src="/line-qr.png"
+                        alt="Line QR Code"
+                        className="w-16 h-16 rounded"
+                      />
+                      <div className="text-white">
+                        <div className="text-xl font-bold">SCAN ME!</div>
+                        <div className="text-sm">@jaroensupair</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Middle Section - QR Code */}
-              <div className="bg-blue-800 rounded-lg p-4 flex items-center space-x-4">
-                <img
-                  src="/line-qr.png"
-                  alt="Line QR Code"
-                  className="w-16 h-16 rounded"
-                />
-                <div className="text-white">
-                  <div className="text-xl font-bold">SCAN ME!</div>
-                  <div className="text-sm">@jaroensupair</div>
-                </div>
-              </div>
-
-              {/* Right Section - Email Contact */}
-              <div className="text-center md:text-right">
-                <p className="text-blue-700 font-medium mb-2">ส่งข้อมูลผ่านทางอีเมล</p>
-                <div className="flex items-center justify-center md:justify-end space-x-2">
-                  <span>📧</span>
-                  <span className="text-blue-700 font-semibold">info@jaroensup.co.th</span>
+              {/* Right Side - Image Card */}
+              <div className="flex justify-center lg:justify-end">
+                <div className="group relative overflow-hidden rounded-2xl shadow-2xl bg-white/10 backdrop-blur-sm p-2 w-full max-w-2xl">
+                  <img
+                    src="/src/assets/images/IMG_0853.jpg"
+                    alt="งานสัมมนา - แอร์ 15 ตัน"
+                    className="w-full h-auto object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
+                    style={{ height: '400px', }}
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
+
 
         {/* Keyword Banner */}
         <div className="w-full bg-gradient-to-r from-blue-600 to-blue-800 py-6">
@@ -143,12 +155,13 @@ const Home = () => {
             {/* Tagline */}
             <div className="text-center mb-6">
               <p className="text-white text-lg md:text-xl font-medium leading-relaxed">
-                "มุ่งมั่นเป็นผู้นำด้านบริการเช่าเครื่องปรับอากาศขนาดใหญ่ ที่ให้ทั้งความเย็น ความสะดวก และความประทับใจในทุกงานสำคัญของคุณ"
+                มุ่งมั่นด้านบริการเช่าเครื่องปรับอากาศขนาดใหญ่
+                ที่ให้ทั้งความเย็น ความสะดวก และความประทับใจในทุกงานสำคัญของคุณ
               </p>
             </div>
           </div>
         </div>
-        
+
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gold-400/10 rounded-full blur-3xl"></div>
@@ -161,10 +174,11 @@ const Home = () => {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              บริการของเรา
+              เจริญทรัพย์แอร์เช่า – เย็นทั่วถึง บริการครบจบในที่เดียว
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
-              บริการเช่าแอร์ขนาดใหญ่ครบวงจร พร้อมทีมงานมืออาชีพ ดูแลตั้งแต่ต้นจนจบ
+              บริการเช่าแอร์ขนาดใหญ่ครบวงจร พร้อมทีมงานมืออาชีพ
+              ดูแลตั้งแต่ต้นจนจบ
             </p>
           </div>
 
@@ -184,20 +198,27 @@ const Home = () => {
               </div>
               <div className="space-y-4">
                 <p className="text-gray-600 text-center">
-                  เหมาะสำหรับงานขนาดเล็กถึงกลาง เช่น งานแต่ง งานเลี้ยงสังสรรค์ ห้องประชุม และกิจกรรมภายในอาคาร
+                  เหมาะสำหรับงานขนาดเล็กถึงกลาง เช่น งานแต่ง งานเลี้ยงสังสรรค์
+                  ห้องประชุม และกิจกรรมภายในอาคาร
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-start space-x-3">
                     <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-sm text-gray-600">เคลื่อนย้ายง่าย ติดตั้งรวดเร็ว</span>
+                    <span className="text-sm text-gray-600">
+                      เคลื่อนย้ายง่าย ติดตั้งรวดเร็ว
+                    </span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-sm text-gray-600">ใช้ไฟ 3 เฟสหรือไฟฟ้าโรงงานได้</span>
+                    <span className="text-sm text-gray-600">
+                      ใช้ไฟ 3 เฟสหรือไฟฟ้าโรงงานได้
+                    </span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-sm text-gray-600">ทีมงานดูแลตั้งแต่ติดตั้งจนถึงเก็บงาน</span>
+                    <span className="text-sm text-gray-600">
+                      ทีมงานดูแลตั้งแต่ติดตั้งจนถึงเก็บงาน
+                    </span>
                   </div>
                 </div>
               </div>
@@ -218,12 +239,15 @@ const Home = () => {
               </div>
               <div className="space-y-4">
                 <p className="text-gray-600 text-center">
-                  เหมาะสำหรับงานขนาดกลางถึงใหญ่ เช่น งานอีเวนต์ในหอประชุม โรงแรม โรงยิม หรือกิจกรรมที่ต้องการความเย็นสม่ำเสมอ
+                  เหมาะสำหรับงานขนาดกลางถึงใหญ่ เช่น งานอีเวนต์ในหอประชุม โรงแรม
+                  โรงยิม หรือกิจกรรมที่ต้องการความเย็นสม่ำเสมอ
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-start space-x-3">
                     <span className="w-2 h-2 bg-gold-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-sm text-gray-600">ทำความเย็นได้รวดเร็ว กระจายลมได้ทั่วถึง</span>
+                    <span className="text-sm text-gray-600">
+                      ทำความเย็นได้รวดเร็ว กระจายลมได้ทั่วถึง
+                    </span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <span className="w-2 h-2 bg-gold-500 rounded-full mt-2 flex-shrink-0"></span>
@@ -231,7 +255,9 @@ const Home = () => {
                   </div>
                   <div className="flex items-start space-x-3">
                     <span className="w-2 h-2 bg-gold-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-sm text-gray-600">ทีมงานช่วยดูแลหน้างานครบวงจร</span>
+                    <span className="text-sm text-gray-600">
+                      ทีมงานช่วยดูแลหน้างานครบวงจร
+                    </span>
                   </div>
                 </div>
               </div>
@@ -252,20 +278,27 @@ const Home = () => {
               </div>
               <div className="space-y-4">
                 <p className="text-gray-600 text-center">
-                  แอร์ขนาดใหญ่สำหรับงานที่ต้องการความเย็นแรงและครอบคลุมพื้นที่กว้าง เช่น งานแสดงสินค้า คอนเสิร์ต โรงงาน หรือคลังสินค้า
+                  แอร์ขนาดใหญ่สำหรับงานที่ต้องการความเย็นแรงและครอบคลุมพื้นที่กว้าง
+                  เช่น งานแสดงสินค้า คอนเสิร์ต โรงงาน หรือคลังสินค้า
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-start space-x-3">
                     <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-sm text-gray-600">มีประสิทธิภาพสูง ให้ความเย็นแรง</span>
+                    <span className="text-sm text-gray-600">
+                      มีประสิทธิภาพสูง ให้ความเย็นแรง
+                    </span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-sm text-gray-600">รองรับจำนวนคนมาก ใช้ไฟ 3 เฟสขนาดใหญ่</span>
+                    <span className="text-sm text-gray-600">
+                      รองรับจำนวนคนมาก ใช้ไฟ 3 เฟสขนาดใหญ่
+                    </span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-sm text-gray-600">พร้อมบริการติดตั้ง รื้อถอน และดูแลหน้างาน</span>
+                    <span className="text-sm text-gray-600">
+                      พร้อมบริการติดตั้ง รื้อถอน และดูแลหน้างาน
+                    </span>
                   </div>
                 </div>
               </div>
@@ -278,9 +311,7 @@ const Home = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 บริการเสริมครบวงจร
               </h3>
-              <p className="text-gray-600">
-                ทุกขนาดแอร์มีบริการเสริมครบ
-              </p>
+              <p className="text-gray-600">ทุกขนาดแอร์มีบริการเสริมครบ</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-center space-x-4">
@@ -290,8 +321,12 @@ const Home = () => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">ทีมงานติดตั้งและรื้อถอน</h4>
-                  <p className="text-sm text-gray-600">ช่างมืออาชีพดูแลการติดตั้งและรื้อถอนอย่างปลอดภัย</p>
+                  <h4 className="font-semibold text-gray-900">
+                    ทีมงานติดตั้งและรื้อถอน
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    ช่างมืออาชีพดูแลการติดตั้งและรื้อถอนอย่างปลอดภัย
+                  </p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -301,14 +336,132 @@ const Home = () => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">ดูแลหน้างานตลอดการใช้งาน</h4>
-                  <p className="text-sm text-gray-600">ทีมงานคอยดูแลและแก้ไขปัญหาตลอดระยะเวลาการใช้งาน</p>
+                  <h4 className="font-semibold text-gray-900">
+                    ดูแลหน้างานตลอดการใช้งาน
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    ทีมงานคอยดูแลและแก้ไขปัญหาตลอดระยะเวลาการใช้งาน
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Portfolio Gallery Section */}
+      <section className="bg-gray-50 py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              ผลงานที่ผ่านมา
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              ภาพถ่ายจากงานจริงที่เราได้ให้บริการลูกค้า
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Portfolio Item 1 */}
+            <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <img
+                src="/src/assets/images/IMG_0848.jpg"
+                alt="งานแต่งงาน - แอร์ 10 ตัน"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-end">
+                <div className="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">งานแต่งงาน</h3>
+                  <p className="text-sm">แอร์ 10 ตัน - โรงแรม ABC</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Portfolio Item 2 */}
+            <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <img
+                src="/src/assets/images/IMG_0849.jpg"
+                alt="งานอีเวนต์ - แอร์ 20 ตัน"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-end">
+                <div className="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">งานอีเวนต์</h3>
+                  <p className="text-sm">แอร์ 20 ตัน - ศูนย์ประชุม</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Portfolio Item 3 */}
+            <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <img
+                src="/src/assets/images/IMG_0850.jpg"
+                alt="งานบวช - แอร์ 5 ตัน"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-end">
+                <div className="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">งานบวช</h3>
+                  <p className="text-sm">แอร์ 5 ตัน - วัด ABC</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Portfolio Item 4 */}
+            <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <img
+                src="/src/assets/images/IMG_0853.jpg"
+                alt="งานสัมมนา - แอร์ 15 ตัน"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-end">
+                <div className="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">งานสัมมนา</h3>
+                  <p className="text-sm">แอร์ 15 ตัน - บริษัท XYZ</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Portfolio Item 5 */}
+            <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <img
+                src="/src/assets/images/IMG_0889.png"
+                alt="งานแสดงสินค้า - แอร์ 20 ตัน"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-end">
+                <div className="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">งานแสดงสินค้า</h3>
+                  <p className="text-sm">แอร์ 20 ตัน - ศูนย์แสดงสินค้า</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Portfolio Item 6 */}
+            <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <img
+                src="/src/assets/images/IMG_0890.png"
+                alt="งานเลี้ยงสังสรรค์ - แอร์ 10 ตัน"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-end">
+                <div className="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">งานเลี้ยงสังสรรค์</h3>
+                  <p className="text-sm">แอร์ 10 ตัน - โรงแรม DEF</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* View More Button */}
+          <div className="text-center mt-12">
+            <button className="btn-primary px-8 py-3 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              ดูผลงานทั้งหมด
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us Section */}
       <section className="bg-gray-50 py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -317,7 +470,8 @@ const Home = () => {
               ทำไมต้องเลือกเรา
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
-              เรามุ่งมั่นให้บริการที่ดีที่สุด เพื่อให้ลูกค้ามั่นใจในคุณภาพและความคุ้มค่า
+              เรามุ่งมั่นให้บริการที่ดีที่สุด
+              เพื่อให้ลูกค้ามั่นใจในคุณภาพและความคุ้มค่า
             </p>
           </div>
 
@@ -335,7 +489,7 @@ const Home = () => {
                     ทีมงานมืออาชีพ
                   </h3>
                   <p className="text-gray-600">
-                    ช่างเทคนิคที่มีประสบการณ์ติดตั้งและดูแลแอร์เช่ากว่า 10 ปี 
+                    ช่างเทคนิคที่มีประสบการณ์ติดตั้งและดูแลแอร์เช่ากว่า 10 ปี
                     ผ่านการอบรมและรับรองมาตรฐานสากล
                   </p>
                 </div>
@@ -355,7 +509,7 @@ const Home = () => {
                     อุปกรณ์คุณภาพสูง
                   </h3>
                   <p className="text-gray-600">
-                    แอร์ใหม่ทุกเครื่อง จากยี่ห้อชั้นนำ ผ่านการตรวจสอบคุณภาพ 
+                    แอร์ใหม่ทุกเครื่อง จากยี่ห้อชั้นนำ ผ่านการตรวจสอบคุณภาพ
                     และบำรุงรักษาอย่างสม่ำเสมอ
                   </p>
                 </div>
@@ -375,7 +529,7 @@ const Home = () => {
                     บริการรวดเร็ว
                   </h3>
                   <p className="text-gray-600">
-                    พร้อมให้บริการทันที ติดตั้งเสร็จภายใน 2-4 ชั่วโมง 
+                    พร้อมให้บริการทันที ติดตั้งเสร็จภายใน 2-4 ชั่วโมง
                     ไม่เสียเวลาและไม่กระทบตารางงาน
                   </p>
                 </div>
@@ -395,7 +549,7 @@ const Home = () => {
                     ราคาโปร่งใส
                   </h3>
                   <p className="text-gray-600">
-                    ราคาคุ้มค่า ไม่มีค่าใช้จ่ายแอบแฝง รับประกันราคา 
+                    ราคาคุ้มค่า ไม่มีค่าใช้จ่ายแอบแฝง รับประกันราคา
                     และให้คำปรึกษาเลือกขนาดที่เหมาะสม
                   </p>
                 </div>
@@ -438,8 +592,12 @@ const Home = () => {
                   ใช้เวลา 3 ชั่วโมง ทำงานเสร็จทันเวลา
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">ลูกค้า: โรงแรม ABC</span>
-                  <span className="text-sm font-semibold text-blue-600">10 ตัน</span>
+                  <span className="text-sm text-gray-500">
+                    ลูกค้า: โรงแรม ABC
+                  </span>
+                  <span className="text-sm font-semibold text-blue-600">
+                    10 ตัน
+                  </span>
                 </div>
               </div>
             </div>
@@ -461,12 +619,16 @@ const Home = () => {
                   งานสัมมนาบริษัท
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  ติดตั้งแอร์ 20 ตัน สำหรับงานสัมมนา 500 คน ในศูนย์ประชุม
-                  ทำงาน 2 วันติดต่อกัน
+                  ติดตั้งแอร์ 20 ตัน สำหรับงานสัมมนา 500 คน ในศูนย์ประชุม ทำงาน
+                  2 วันติดต่อกัน
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">ลูกค้า: บริษัท XYZ</span>
-                  <span className="text-sm font-semibold text-gold-600">20 ตัน</span>
+                  <span className="text-sm text-gray-500">
+                    ลูกค้า: บริษัท XYZ
+                  </span>
+                  <span className="text-sm font-semibold text-gold-600">
+                    20 ตัน
+                  </span>
                 </div>
               </div>
             </div>
@@ -488,12 +650,16 @@ const Home = () => {
                   ออฟฟิศชั่วคราว
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  ติดตั้งแอร์ 5 ตัน สำหรับออฟฟิศชั่วคราว 50 คน
-                  ระยะเวลา 3 เดือน พร้อมบำรุงรักษา
+                  ติดตั้งแอร์ 5 ตัน สำหรับออฟฟิศชั่วคราว 50 คน ระยะเวลา 3 เดือน
+                  พร้อมบำรุงรักษา
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">ลูกค้า: สตาร์ทอัพ ABC</span>
-                  <span className="text-sm font-semibold text-blue-600">5 ตัน</span>
+                  <span className="text-sm text-gray-500">
+                    ลูกค้า: สตาร์ทอัพ ABC
+                  </span>
+                  <span className="text-sm font-semibold text-blue-600">
+                    5 ตัน
+                  </span>
                 </div>
               </div>
             </div>
@@ -520,7 +686,9 @@ const Home = () => {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-500">ลูกค้า: วัด ABC</span>
-                  <span className="text-sm font-semibold text-gold-600">15 ตัน</span>
+                  <span className="text-sm font-semibold text-gold-600">
+                    15 ตัน
+                  </span>
                 </div>
               </div>
             </div>
@@ -553,7 +721,8 @@ const Home = () => {
               ติดต่อเรา
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
-              สนใจเช่าแอร์หรือสอบถามข้อมูลเพิ่มเติม ติดต่อเราได้ตามช่องทางด้านล่าง
+              สนใจเช่าแอร์หรือสอบถามข้อมูลเพิ่มเติม
+              ติดต่อเราได้ตามช่องทางด้านล่าง
             </p>
           </div>
 
@@ -569,7 +738,9 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">เบอร์โทรศัพท์</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      เบอร์โทรศัพท์
+                    </h3>
                     <div className="space-y-1">
                       <p className="text-gray-600">086-975-0664 (คุณหมวย)</p>
                       <p className="text-gray-600">096-958-4422 (คุณแม็กซ์)</p>
@@ -593,9 +764,12 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">ที่อยู่บริษัท</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      ที่อยู่บริษัท
+                    </h3>
                     <p className="text-gray-600">
-                      448 ถ.นาคนิวาส แขวงลาดพร้าว<br />
+                      448 ถ.นาคนิวาส แขวงลาดพร้าว
+                      <br />
                       เขตลาดพร้าว กรุงเทพฯ 10230
                     </p>
                   </div>
@@ -611,8 +785,12 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Line Official</h3>
-                    <p className="text-gray-600 mb-3">สแกน QR Code เพื่อแชทกับเรา</p>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Line Official
+                    </h3>
+                    <p className="text-gray-600 mb-3">
+                      สแกน QR Code เพื่อแชทกับเรา
+                    </p>
                     <img
                       src="/line-qr.png"
                       alt="Line QR Code"
@@ -634,7 +812,9 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Facebook Page</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Facebook Page
+                    </h3>
                     <p className="text-gray-600 mb-3">
                       ติดตามเราเพื่อรับข้อมูลข่าวสารและโปรโมชั่น
                     </p>
@@ -652,7 +832,9 @@ const Home = () => {
 
               {/* Quick Quote */}
               <div className="card-elegant p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">ขอใบเสนอราคา</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  ขอใบเสนอราคา
+                </h3>
                 <p className="text-gray-600 mb-4">
                   ส่งข้อมูลความต้องการของคุณ เราจะติดต่อกลับภายใน 24 ชั่วโมง
                 </p>
@@ -678,9 +860,7 @@ const Home = () => {
                     placeholder="รายละเอียดงาน"
                     className="input-elegant w-full h-24"
                   ></textarea>
-                  <button className="btn-secondary w-full">
-                    ส่งคำขอ
-                  </button>
+                  <button className="btn-secondary w-full">ส่งคำขอ</button>
                 </div>
               </div>
             </div>
@@ -698,8 +878,8 @@ const Home = () => {
                 บริษัท จาเรนซัพ แอร์เรนทอล
               </h3>
               <p className="text-gray-300 mb-4">
-                ผู้ให้บริการเช่าแอร์ขนาดใหญ่ 5-20 ตัน สำหรับงานอีเวนต์ งานแต่งงาน 
-                และงานใหญ่ทุกประเภท พร้อมทีมงานมืออาชีพ
+                ผู้ให้บริการเช่าแอร์ขนาดใหญ่ 5-20 ตัน สำหรับงานอีเวนต์
+                งานแต่งงาน และงานใหญ่ทุกประเภท พร้อมทีมงานมืออาชีพ
               </p>
               <div className="space-y-2 text-sm text-gray-300">
                 <p>📍 448 ถ.นาคนิวาส แขวงลาดพร้าว เขตลาดพร้าว กรุงเทพฯ 10230</p>
@@ -710,7 +890,9 @@ const Home = () => {
 
             {/* Services */}
             <div>
-              <h4 className="text-lg font-semibold text-gold-400 mb-4">บริการของเรา</h4>
+              <h4 className="text-lg font-semibold text-gold-400 mb-4">
+                บริการของเรา
+              </h4>
               <ul className="space-y-2 text-sm text-gray-300">
                 <li>เช่าแอร์ 5 ตัน</li>
                 <li>เช่าแอร์ 10 ตัน</li>
@@ -723,12 +905,44 @@ const Home = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-semibold text-gold-400 mb-4">ลิงก์ด่วน</h4>
+              <h4 className="text-lg font-semibold text-gold-400 mb-4">
+                ลิงก์ด่วน
+              </h4>
               <ul className="space-y-2 text-sm text-gray-300">
-                <li><a href="#services" className="hover:text-gold-400 transition-colors">บริการของเรา</a></li>
-                <li><a href="#contact" className="hover:text-gold-400 transition-colors">ติดต่อเรา</a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=61579877480646" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">Facebook</a></li>
-                <li><a href="tel:0869750664" className="hover:text-gold-400 transition-colors">โทรเลย</a></li>
+                <li>
+                  <a
+                    href="#services"
+                    className="hover:text-gold-400 transition-colors"
+                  >
+                    บริการของเรา
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    className="hover:text-gold-400 transition-colors"
+                  >
+                    ติดต่อเรา
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61579877480646"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gold-400 transition-colors"
+                  >
+                    Facebook
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="tel:0869750664"
+                    className="hover:text-gold-400 transition-colors"
+                  >
+                    โทรเลย
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
