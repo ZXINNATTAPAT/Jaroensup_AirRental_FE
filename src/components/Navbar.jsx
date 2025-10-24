@@ -45,7 +45,8 @@ const translations = {
 
 const Navbar = () => {
   const cookies = new Cookies();
-  const [isToggle, setIsToggle] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [image, setImage] = useState(null);
   const token = cookies.get("authToken");
   const navigate = useNavigate();
@@ -72,13 +73,16 @@ const Navbar = () => {
       if (activeDropdown && !event.target.closest('.relative')) {
         setActiveDropdown(null);
       }
+      if (isUserMenuOpen && !event.target.closest('.user-menu-container')) {
+        setIsUserMenuOpen(false);
+      }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [activeDropdown]);
+  }, [activeDropdown, isUserMenuOpen]);
 
   useEffect(() => {
     if (token) {
@@ -88,9 +92,12 @@ const Navbar = () => {
     }
   }, [token]);
 
-  const toggleNavbar = () => {
-    setIsToggle(!isToggle);
-    console.log(isToggle);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleUserMenu = () => {
+    setIsUserMenuOpen(!isUserMenuOpen);
   };
 
   const handleDropdownToggle = (dropdownName) => {
@@ -207,7 +214,8 @@ const Navbar = () => {
     console.log("Logging out...");
     cookies.remove("authToken", { path: "/" });
     console.log("Token after remove:", cookies.get("authToken"));
-    setIsToggle(false); // ✅ ปิด Dropdown Menu
+    setIsUserMenuOpen(false); // ✅ ปิด User Menu
+    setIsMobileMenuOpen(false); // ✅ ปิด Mobile Menu
     navigate("/login");
   };
 
@@ -322,7 +330,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>
@@ -347,7 +358,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>
@@ -372,7 +386,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>
@@ -397,7 +414,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>
@@ -422,7 +442,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>
@@ -447,7 +470,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>
@@ -472,7 +498,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>
@@ -493,9 +522,9 @@ const Navbar = () => {
             </button>
             
             {token && (
-              <div className="relative">
+              <div className="relative user-menu-container">
                 <button
-                  onClick={toggleNavbar}
+                  onClick={toggleUserMenu}
                   className="flex items-center space-x-2 text-sm"
                 >
                   <div className="w-8 h-8 rounded-full overflow-hidden">
@@ -509,41 +538,46 @@ const Navbar = () => {
                   </div>
                 </button>
                 
-                {isToggle && (
+                {isUserMenuOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200">
-                    <a
-                      href="/profile-setting"
+                    <Link
+                      to="/profile-setting"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center justify-between"
+                      onClick={() => setIsUserMenuOpen(false)}
                     >
                       {translations[language].profile}
                       <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">New</span>
-                    </a>
-                    <a
-                      href="/history"
+                    </Link>
+                    <Link
+                      to="/history"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setIsUserMenuOpen(false)}
                     >
                       {translations[language].history}
-                    </a>
-                    <a
-                      href="/change-password"
+                    </Link>
+                    <Link
+                      to="/change-password"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setIsUserMenuOpen(false)}
                     >
                       {translations[language].changePassword}
-                    </a>
+                    </Link>
                     {role !== 1 && (
-                      <a
-                        href="/dashboard/home"
+                      <Link
+                        to="/dashboard/home"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        onClick={() => setIsUserMenuOpen(false)}
                       >
                         {translations[language].gotoDashboard}
-                      </a>
+                      </Link>
                     )}
-                    <a
-                      href="/settings"
+                    <Link
+                      to="/settings"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setIsUserMenuOpen(false)}
                     >
                       {translations[language].notification}
-                    </a>
+                    </Link>
                     <button
                       onClick={handleLogout}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -559,7 +593,7 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={toggleNavbar}
+              onClick={toggleMobileMenu}
               className="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -570,13 +604,16 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu */}
-        {isToggle && (
+        {isMobileMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
               <Link
                 to="/"
                 className="text-black hover:text-blue-600 block px-3 py-2 text-base font-medium"
-                onClick={handleDropdownClose}
+                onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
               >
                 {translations[language].home}
               </Link>
@@ -597,7 +634,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="text-gray-600 hover:text-blue-600 block px-3 py-2 text-sm"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>
@@ -622,7 +662,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="text-gray-600 hover:text-blue-600 block px-3 py-2 text-sm"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>
@@ -647,7 +690,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="text-gray-600 hover:text-blue-600 block px-3 py-2 text-sm"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>
@@ -672,7 +718,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="text-gray-600 hover:text-blue-600 block px-3 py-2 text-sm"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>
@@ -697,7 +746,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="text-gray-600 hover:text-blue-600 block px-3 py-2 text-sm"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>
@@ -722,7 +774,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="text-gray-600 hover:text-blue-600 block px-3 py-2 text-sm"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>
@@ -747,7 +802,10 @@ const Navbar = () => {
                         key={index}
                         to={item.link}
                         className="text-gray-600 hover:text-blue-600 block px-3 py-2 text-sm"
-                        onClick={handleDropdownClose}
+                        onClick={() => {
+                  handleDropdownClose();
+                  setIsMobileMenuOpen(false);
+                }}
                       >
                         {item.name}
                       </Link>

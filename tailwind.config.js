@@ -9,39 +9,39 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        'prompt' : ['Prompt','sans-serif'],
-        'inter'  : ['Inter']
+        'kanit' : ['Kanit','sans-serif'],
+        'inter'  : ['Inter','sans-serif']
       },
       colors: {
-        // Gold color palette
-        'gold': {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
+        // Pantone 109C Yellow color palette
+        'yellow': {
+          50: '#fffef7',
+          100: '#fffceb',
+          200: '#fff7d1',
+          300: '#fff0a8',
+          400: '#ffe570',
+          500: '#FFCC00', // Pantone 109C
+          600: '#e6b800',
+          700: '#cc9900',
+          800: '#b38600',
+          900: '#996600',
         },
-        // Blue color palette (overriding default blue)
+        // Pantone 293C Blue color palette
         'blue': {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+          50: '#f0f4ff',
+          100: '#e0e9ff',
+          200: '#c7d7ff',
+          300: '#a3bfff',
+          400: '#7a9bff',
+          500: '#003399', // Pantone 293C
+          600: '#002d8a',
+          700: '#00277a',
+          800: '#00216b',
+          900: '#001b5c',
         },
         // Primary and secondary colors
-        'primary': '#3b82f6', // blue-500
-        'secondary': '#f59e0b', // gold-500
+        'primary': '#003399', // Pantone 293C Blue
+        'secondary': '#FFCC00', // Pantone 109C Yellow
         // Legacy colors for backward compatibility
         'blueCustom': '#2984FF',
         'greyCustom': '#A8AFBD',
@@ -56,16 +56,16 @@ export default {
     themes: [
       {
         light: {
-          "primary": "#3b82f6", // blue-500
-          "secondary": "#f59e0b", // gold-500
-          "accent": "#1e40af", // blue-800
+          "primary": "#003399", // Pantone 293C Blue
+          "secondary": "#FFCC00", // Pantone 109C Yellow
+          "accent": "#002d8a", // blue-600
           "neutral": "#374151", // gray-700
           "base-100": "#ffffff",
           "base-200": "#f9fafb", // gray-50
           "base-300": "#f3f4f6", // gray-100
-          "info": "#3b82f6", // blue-500
+          "info": "#003399", // Pantone 293C Blue
           "success": "#10b981", // emerald-500
-          "warning": "#f59e0b", // gold-500
+          "warning": "#FFCC00", // Pantone 109C Yellow
           "error": "#ef4444", // red-500
         },
       },
