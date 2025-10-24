@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @tailwind base;
@@ -7,12 +7,12 @@
 
 /* Custom CSS Variables */
 :root {
-  --color-primary: #3b82f6;
-  --color-secondary: #f59e0b;
-  --color-accent: #1e40af;
-  --color-gold: #f59e0b;
-  --color-blue: #3b82f6;
-  --color-blue-dark: #1e40af;
+  --color-primary: #003399; /* Pantone 293C Blue */
+  --color-secondary: #FFCC00; /* Pantone 109C Yellow */
+  --color-accent: #002d8a;
+  --color-yellow: #FFCC00;
+  --color-blue: #003399;
+  --color-blue-dark: #002d8a;
 }
 
 /* Custom Component Classes */
@@ -23,7 +23,7 @@
   }
   
   .btn-secondary {
-    @apply bg-gold-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-gold-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2;
+    @apply bg-yellow-500 text-gray-900 px-4 py-2 rounded-lg font-medium hover:bg-yellow-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2;
   }
   
   .btn-outline-primary {
@@ -31,7 +31,7 @@
   }
   
   .btn-outline-secondary {
-    @apply border-2 border-gold-500 text-gold-500 px-4 py-2 rounded-lg font-medium hover:bg-gold-500 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2;
+    @apply border-2 border-yellow-500 text-yellow-500 px-4 py-2 rounded-lg font-medium hover:bg-yellow-500 hover:text-gray-900 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2;
   }
 
   /* Card Styles */
@@ -39,8 +39,8 @@
     @apply bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200;
   }
   
-  .card-gold-accent {
-    @apply bg-white rounded-xl shadow-sm border-2 border-gold-200 hover:shadow-md transition-shadow duration-200;
+  .card-yellow-accent {
+    @apply bg-white rounded-xl shadow-sm border-2 border-yellow-200 hover:shadow-md transition-shadow duration-200;
   }
   
   .card-blue-accent {
@@ -48,8 +48,8 @@
   }
 
   /* Gradient Backgrounds */
-  .bg-gradient-gold {
-    @apply bg-gradient-to-r from-gold-400 to-gold-600;
+  .bg-gradient-yellow {
+    @apply bg-gradient-to-r from-yellow-400 to-yellow-600;
   }
   
   .bg-gradient-blue {
@@ -65,8 +65,8 @@
   }
 
   /* Text Gradients */
-  .text-gradient-gold {
-    @apply bg-gradient-to-r from-gold-500 to-gold-700 bg-clip-text text-transparent;
+  .text-gradient-yellow {
+    @apply bg-gradient-to-r from-yellow-500 to-yellow-700 bg-clip-text text-transparent;
   }
   
   .text-gradient-blue {
@@ -74,8 +74,8 @@
   }
 
   /* Badge Styles */
-  .badge-gold {
-    @apply bg-gold-100 text-gold-800 px-3 py-1 rounded-full text-sm font-medium;
+  .badge-yellow {
+    @apply bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium;
   }
   
   .badge-blue {
