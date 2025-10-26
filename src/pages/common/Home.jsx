@@ -63,6 +63,35 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-yellow-50">
+        {/* Wave Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.1"/>
+                <stop offset="50%" stopColor="#F59E0B" stopOpacity="0.05"/>
+                <stop offset="100%" stopColor="#10B981" stopOpacity="0.1"/>
+              </linearGradient>
+              <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.08"/>
+                <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.05"/>
+                <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.08"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,200 Q300,100 600,200 T1200,200 L1200,800 L0,800 Z" fill="url(#waveGradient1)" opacity="0.6"/>
+            <path d="M0,400 Q400,300 800,400 T1200,400 L1200,800 L0,800 Z" fill="url(#waveGradient2)" opacity="0.4"/>
+            <path d="M0,600 Q200,500 400,600 T800,600 Q1000,700 1200,600 L1200,800 L0,800 Z" fill="url(#waveGradient1)" opacity="0.3"/>
+          </svg>
+        </div>
+
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-20 h-20 bg-blue-400/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-32 h-32 bg-yellow-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-40 left-1/4 w-24 h-24 bg-green-400/20 rounded-full blur-xl animate-pulse delay-2000"></div>
+          <div className="absolute top-60 left-1/3 w-16 h-16 bg-purple-400/20 rounded-full blur-xl animate-pulse delay-500"></div>
+        </div>
+
         {/* Yellow highlight lines */}
         <div className="absolute top-20 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-60"></div>
         <div className="absolute top-40 right-0 w-1/2 h-1 bg-gradient-to-l from-transparent via-yellow-400 to-transparent opacity-40"></div>
@@ -275,8 +304,30 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="services" className="py-20 bg-white relative overflow-hidden">
+        {/* Wave Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="serviceWave1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#EFF6FF" stopOpacity="0.8"/>
+                <stop offset="50%" stopColor="#FEF3C7" stopOpacity="0.6"/>
+                <stop offset="100%" stopColor="#ECFDF5" stopOpacity="0.8"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,100 Q300,50 600,100 T1200,100 L1200,800 L0,800 Z" fill="url(#serviceWave1)" opacity="0.3"/>
+            <path d="M0,300 Q400,250 800,300 T1200,300 L1200,800 L0,800 Z" fill="url(#serviceWave1)" opacity="0.2"/>
+          </svg>
+        </div>
+
+        {/* Floating Service Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-32 left-16 w-12 h-12 bg-blue-500/10 rounded-full blur-lg animate-bounce"></div>
+          <div className="absolute top-64 right-24 w-16 h-16 bg-yellow-500/10 rounded-full blur-lg animate-bounce delay-1000"></div>
+          <div className="absolute bottom-32 left-1/3 w-14 h-14 bg-green-500/10 rounded-full blur-lg animate-bounce delay-2000"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-kanit font-bold text-gray-900 mb-4">
@@ -290,451 +341,238 @@ const Home = () => {
           </div>
 
           {/* Services Grid */}
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Service 1 - แอร์ 5 ตัน */}
             <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
-              <div className="relative z-10 p-8">
-                {/* Service Header */}
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <span className="text-2xl font-kanit font-bold text-white">
-                      5
-                    </span>
+              {/* Hover border effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl p-0.5">
+                <div className="w-full h-full bg-white rounded-2xl"></div>
+              </div>
+
+              <div className="relative z-10 p-6">
+                {/* Service Image */}
+                <div className="relative mb-6 overflow-hidden rounded-xl">
+                  <img
+                    src="/images/work1.jpg"
+                    alt="แอร์ 5 ตัน"
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  {/* Size Badge */}
+                  <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-kanit font-semibold shadow-lg">
+                    5 ตัน
                   </div>
-                  <h3 className="text-2xl font-kanit font-bold text-gray-900 mb-2">
-                    แอร์เช่า 5 ตัน
-                  </h3>
-                  <p className="text-sm text-gray-500 font-inter">
-                    Compact Size
-                  </p>
                 </div>
 
-                {/* Service Description */}
+                {/* Service Info */}
                 <div className="space-y-4">
+                  <div>
+                    <h3 className="text-xl font-kanit font-bold text-gray-900 mb-1">
+                      แอร์เช่า 5 ตัน
+                    </h3>
+                    <p className="text-sm text-gray-500 font-inter">Compact Size</p>
+                  </div>
+
                   <p className="text-gray-600 font-inter leading-relaxed">
                     แอร์ขนาดกะทัดรัด เหมาะสำหรับงานขนาดเล็กถึงกลาง เช่น งานแต่ง
                     งานเลี้ยงสังสรรค์ ห้องประชุม และกิจกรรมภายในอาคาร
                   </p>
 
                   {/* Features */}
-                  <div className="space-y-3">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm text-gray-600 font-inter">
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm text-gray-600 font-inter">
                         เคลื่อนย้ายง่าย ติดตั้งรวดเร็ว
-                      </p>
+                      </span>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm text-gray-600 font-inter">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm text-gray-600 font-inter">
                         ใช้ไฟ 3 เฟสหรือไฟฟ้าโรงงานได้
-                      </p>
+                      </span>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm text-gray-600 font-inter">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm text-gray-600 font-inter">
                         ทีมงานดูแลตั้งแต่ติดตั้งจนถึงเก็บงาน
-                      </p>
+                      </span>
                     </div>
                   </div>
 
-                  {/* CTA Button */}
-                  <div className="pt-4">
-                    <button className="w-full px-6 py-3 bg-blue-500 text-white font-kanit font-semibold rounded-xl shadow-lg hover:bg-blue-600 transform hover:scale-105 transition-all duration-300">
-                      สอบถามราคา
+                  {/* Price */}
+                  <div className="pt-4 border-t border-gray-100">
+                    <p className="text-lg font-kanit font-semibold text-blue-600 mb-4">
+                      เริ่มต้น 1,500 บาท/วัน
+                    </p>
+
+                    {/* CTA Button */}
+                    <button className="w-full group/btn relative px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-kanit font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                      <span className="relative z-10">สอบถามราคา</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                     </button>
                   </div>
                 </div>
               </div>
+
+              {/* Decorative elements */}
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+              <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-blue-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
             </div>
 
             {/* Service 2 - แอร์ 10 ตัน */}
             <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
-              <div className="relative z-10 p-8">
-                {/* Service Header */}
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <span className="text-2xl font-kanit font-bold text-gray-900">
-                      10
-                    </span>
+              {/* Hover border effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl p-0.5">
+                <div className="w-full h-full bg-white rounded-2xl"></div>
+              </div>
+
+              <div className="relative z-10 p-6">
+                {/* Service Image */}
+                <div className="relative mb-6 overflow-hidden rounded-xl">
+                  <img
+                    src="/images/work2.jpg"
+                    alt="แอร์ 10 ตัน"
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  {/* Size Badge */}
+                  <div className="absolute top-4 right-4 bg-yellow-500 text-gray-900 px-3 py-1 rounded-full text-sm font-kanit font-semibold shadow-lg">
+                    10 ตัน
                   </div>
-                  <h3 className="text-2xl font-kanit font-bold text-gray-900 mb-2">
-                    แอร์เช่า 10 ตัน
-                  </h3>
-                  <p className="text-sm text-gray-500 font-inter">
-                    Medium Size
-                  </p>
                 </div>
 
-                {/* Service Description */}
+                {/* Service Info */}
                 <div className="space-y-4">
+                  <div>
+                    <h3 className="text-xl font-kanit font-bold text-gray-900 mb-1">
+                      แอร์เช่า 10 ตัน
+                    </h3>
+                    <p className="text-sm text-gray-500 font-inter">Medium Size</p>
+                  </div>
+
                   <p className="text-gray-600 font-inter leading-relaxed">
                     เหมาะสำหรับงานขนาดกลางถึงใหญ่ เช่น งานอีเวนต์ในหอประชุม
                     โรงแรม โรงยิม หรือกิจกรรมที่ต้องการความเย็นสม่ำเสมอ
                   </p>
 
                   {/* Features */}
-                  <div className="space-y-3">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm text-gray-600 font-inter">
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                      <span className="text-sm text-gray-600 font-inter">
                         ทำความเย็นได้รวดเร็ว
-                      </p>
+                      </span>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm text-gray-600 font-inter">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                      <span className="text-sm text-gray-600 font-inter">
                         กระจายลมได้ทั่วถึง
-                      </p>
+                      </span>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm text-gray-600 font-inter">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                      <span className="text-sm text-gray-600 font-inter">
                         ใช้ไฟ 3 เฟส ทีมงานช่วยดูแลหน้างานครบวงจร
-                      </p>
+                      </span>
                     </div>
                   </div>
 
-                  {/* CTA Button */}
-                  <div className="pt-4">
-                    <button className="w-full px-6 py-3 bg-yellow-500 text-gray-900 font-kanit font-semibold rounded-xl shadow-lg hover:bg-yellow-400 transform hover:scale-105 transition-all duration-300">
-                      สอบถามราคา
+                  {/* Price */}
+                  <div className="pt-4 border-t border-gray-100">
+                    <p className="text-lg font-kanit font-semibold text-blue-600 mb-4">
+                      เริ่มต้น 2,500 บาท/วัน
+                    </p>
+
+                    {/* CTA Button */}
+                    <button className="w-full group/btn relative px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 font-kanit font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-300">
+                      <span className="relative z-10">สอบถามราคา</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                     </button>
                   </div>
                 </div>
               </div>
+
+              {/* Decorative elements */}
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+              <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-blue-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
             </div>
 
             {/* Service 3 - แอร์ 20 ตัน */}
             <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
-              <div className="relative z-10 p-8">
-                {/* Service Header */}
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <span className="text-2xl font-kanit font-bold text-white">
-                      20
-                    </span>
+              {/* Hover border effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl p-0.5">
+                <div className="w-full h-full bg-white rounded-2xl"></div>
+              </div>
+
+              <div className="relative z-10 p-6">
+                {/* Service Image */}
+                <div className="relative mb-6 overflow-hidden rounded-xl">
+                  <img
+                    src="/images/work3.jpg"
+                    alt="แอร์ 20 ตัน"
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  {/* Size Badge */}
+                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-kanit font-semibold shadow-lg">
+                    20 ตัน
                   </div>
-                  <h3 className="text-2xl font-kanit font-bold text-gray-900 mb-2">
-                    แอร์เช่า 20 ตัน
-                  </h3>
-                  <p className="text-sm text-gray-500 font-inter">Large Size</p>
                 </div>
 
-                {/* Service Description */}
+                {/* Service Info */}
                 <div className="space-y-4">
+                  <div>
+                    <h3 className="text-xl font-kanit font-bold text-gray-900 mb-1">
+                      แอร์เช่า 20 ตัน
+                    </h3>
+                    <p className="text-sm text-gray-500 font-inter">Large Size</p>
+                  </div>
+
                   <p className="text-gray-600 font-inter leading-relaxed">
                     แอร์ขนาดใหญ่สำหรับงานที่ต้องการความเย็นแรงและครอบคลุมพื้นที่กว้าง
                     เช่น งานแสดงสินค้า คอนเสิร์ต โรงงาน หรือคลังสินค้า
                   </p>
 
                   {/* Features */}
-                  <div className="space-y-3">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm text-gray-600 font-inter">
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <span className="text-sm text-gray-600 font-inter">
                         มีประสิทธิภาพสูง ให้ความเย็นแรง
-                      </p>
+                      </span>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm text-gray-600 font-inter">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <span className="text-sm text-gray-600 font-inter">
                         รองรับจำนวนคนมาก
-                      </p>
+                      </span>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm text-gray-600 font-inter">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <span className="text-sm text-gray-600 font-inter">
                         ใช้ไฟ 3 เฟสขนาดใหญ่ พร้อมบริการติดตั้ง รื้อถอน
                         และดูแลหน้างาน
-                      </p>
+                      </span>
                     </div>
                   </div>
 
-                  {/* CTA Button */}
-                  <div className="pt-4">
-                    <button className="w-full px-6 py-3 bg-green-500 text-white font-kanit font-semibold rounded-xl shadow-lg hover:bg-green-600 transform hover:scale-105 transition-all duration-300">
-                      สอบถามราคา
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Additional Services */}
-          <div className="mt-16 bg-gradient-to-br from-blue-50 to-yellow-50 rounded-2xl p-8">
-            <div className="text-center">
-              <h3 className="text-2xl font-kanit font-bold text-gray-900 mb-4">
-                บริการเสริมครบวงจร
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xl">🔧</span>
-                  </div>
-                  <div className="text-left">
-                    <h4 className="font-kanit font-semibold text-gray-900">
-                      ทีมงานติดตั้งและรื้อถอน
-                    </h4>
-                    <p className="text-sm text-gray-600 font-inter">
-                      มืออาชีพ ประสบการณ์สูง
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center">
-                    <span className="text-gray-900 text-xl">👥</span>
-                  </div>
-                  <div className="text-left">
-                    <h4 className="font-kanit font-semibold text-gray-900">
-                      ดูแลหน้างานตลอดการใช้งาน
-                    </h4>
-                    <p className="text-sm text-gray-600 font-inter">
-                      บริการครบวงจร
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Cards */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Product 1 - พัดลมไอน้ำ */}
-          <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
-            {/* Hover border effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl p-0.5">
-              <div className="w-full h-full bg-white rounded-2xl"></div>
-            </div>
-
-            <div className="relative z-10 p-6">
-              {/* Product Image */}
-              <div className="relative mb-6 overflow-hidden rounded-xl">
-                <img
-                  src="/images/work1.jpg"
-                  alt="พัดลมไอน้ำ - Water Fan"
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                {/* BTU Badge */}
-                <div className="absolute top-4 right-4 bg-yellow-500 text-gray-900 px-3 py-1 rounded-full text-sm font-kanit font-semibold shadow-lg">
-                  12,000 BTU
-                </div>
-              </div>
-
-              {/* Product Info */}
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-xl font-kanit font-bold text-gray-900 mb-1">
-                    พัดลมไอน้ำ
-                  </h3>
-                  <p className="text-sm text-gray-500 font-inter">Water Fan</p>
-                </div>
-
-                <p className="text-gray-600 font-inter leading-relaxed">
-                  เหมาะสำหรับงานกลางแจ้ง ให้ความเย็นสบาย
-                </p>
-
-                {/* Features */}
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-gray-600 font-inter">
-                      ประหยัดไฟ
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-gray-600 font-inter">
-                      ติดตั้งง่าย
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-gray-600 font-inter">
-                      ดูแลรักษาง่าย
-                    </span>
-                  </div>
-                </div>
-
-                {/* Price */}
-                <div className="pt-4 border-t border-gray-100">
-                  <p className="text-lg font-kanit font-semibold text-blue-600 mb-4">
-                    เริ่มต้น 500 บาท/วัน
-                  </p>
-
-                  {/* CTA Button */}
-                  <button className="w-full group/btn relative px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-kanit font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
-                    <span className="relative z-10">ขอราคา</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Decorative elements */}
-            <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-            <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-blue-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-          </div>
-
-          {/* Product 2 - แอร์เคลื่อนที่ */}
-          <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
-            {/* Hover border effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl p-0.5">
-              <div className="w-full h-full bg-white rounded-2xl"></div>
-            </div>
-
-            <div className="relative z-10 p-6">
-              {/* Product Image */}
-              <div className="relative mb-6 overflow-hidden rounded-xl">
-                <img
-                  src="/images/work2.jpg"
-                  alt="แอร์เคลื่อนที่ - Portable AC"
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                {/* BTU Badge */}
-                <div className="absolute top-4 right-4 bg-yellow-500 text-gray-900 px-3 py-1 rounded-full text-sm font-kanit font-semibold shadow-lg">
-                  9,000 BTU
-                </div>
-              </div>
-
-              {/* Product Info */}
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-xl font-kanit font-bold text-gray-900 mb-1">
-                    แอร์เคลื่อนที่
-                  </h3>
-                  <p className="text-sm text-gray-500 font-inter">
-                    Portable AC
-                  </p>
-                </div>
-
-                <p className="text-gray-600 font-inter leading-relaxed">
-                  แอร์เคลื่อนที่ขนาดเล็ก เหมาะสำหรับพื้นที่จำกัด
-                </p>
-
-                {/* Features */}
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-gray-600 font-inter">
-                      เคลื่อนย้ายง่าย
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-gray-600 font-inter">
-                      ประหยัดพลังงาน
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-gray-600 font-inter">
-                      เสียงเงียบ
-                    </span>
-                  </div>
-                </div>
-
-                {/* Price */}
-                <div className="pt-4 border-t border-gray-100">
-                  <p className="text-lg font-kanit font-semibold text-blue-600 mb-4">
-                    เริ่มต้น 800 บาท/วัน
-                  </p>
-
-                  {/* CTA Button */}
-                  <button className="w-full group/btn relative px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-kanit font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
-                    <span className="relative z-10">ขอราคา</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Decorative elements */}
-            <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-            <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-blue-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-          </div>
-
-          {/* Product 3 - แอร์ตู้ */}
-          <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
-            {/* Hover border effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl p-0.5">
-              <div className="w-full h-full bg-white rounded-2xl"></div>
-            </div>
-
-            <div className="relative z-10 p-6">
-              {/* Product Image */}
-              <div className="relative mb-6 overflow-hidden rounded-xl">
-                <img
-                  src="/images/work3.jpg"
-                  alt="แอร์ตู้ - Cabinet AC"
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                {/* BTU Badge */}
-                <div className="absolute top-4 right-4 bg-yellow-500 text-gray-900 px-3 py-1 rounded-full text-sm font-kanit font-semibold shadow-lg">
-                  18,000 BTU
-                </div>
-              </div>
-
-              {/* Product Info */}
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-xl font-kanit font-bold text-gray-900 mb-1">
-                    แอร์ตู้
-                  </h3>
-                  <p className="text-sm text-gray-500 font-inter">Cabinet AC</p>
-                </div>
-
-                <p className="text-gray-600 font-inter leading-relaxed">
-                  แอร์ตู้ขนาดใหญ่ เหมาะสำหรับพื้นที่กว้าง
-                </p>
-
-                {/* Features */}
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-gray-600 font-inter">
-                      ความเย็นแรง
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-gray-600 font-inter">
-                      พื้นที่กว้าง
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-gray-600 font-inter">
-                      ทนทาน
-                    </span>
-                  </div>
-                </div>
-
-                <div>
                   {/* Price */}
                   <div className="pt-4 border-t border-gray-100">
                     <p className="text-lg font-kanit font-semibold text-blue-600 mb-4">
-                      เริ่มต้น 1,200 บาท/วัน
+                      เริ่มต้น 4,000 บาท/วัน
                     </p>
 
                     {/* CTA Button */}
-                    <button className="w-full group/btn relative px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-kanit font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
-                      <span className="relative z-10">ขอราคา</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                    <button className="w-full group/btn relative px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-kanit font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-300">
+                      <span className="relative z-10">สอบถามราคา</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-green-800 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                     </button>
                   </div>
                 </div>
@@ -746,23 +584,185 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Bottom CTA */}
-          <div className="text-center mt-16">
-            <p className="text-gray-600 font-inter mb-6">
-              ไม่พบสินค้าที่ต้องการ? ติดต่อเราเพื่อขอคำแนะนำ
-            </p>
-            <button className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 font-kanit font-semibold text-lg rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-300">
-              ติดต่อสอบถาม
-            </button>
-          </div>
+          {/* Additional Services */}
+          <div className="mt-16">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-kanit font-bold text-gray-900 mb-4">
+                บริการเสริมครบวงจร
+              </h3>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+              {/* Card ซ้าย - ทีมงานติดตั้งและรื้อถอน */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+                {/* Hover border effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl p-0.5">
+                  <div className="w-full h-full bg-white rounded-2xl"></div>
+                </div>
+
+                <div className="relative z-10 p-8">
+                  {/* Icon Section */}
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white text-3xl">🔧</span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="text-center">
+                    <h4 className="text-xl font-kanit font-bold text-gray-900 mb-3">
+                      ทีมงานติดตั้งและรื้อถอน
+                    </h4>
+                    <p className="text-gray-600 font-inter leading-relaxed mb-6">
+                      ทีมงานมืออาชีพที่มีประสบการณ์สูง พร้อมให้บริการติดตั้งและรื้อถอนแอร์อย่างปลอดภัยและรวดเร็ว
+                    </p>
+
+
+                   
+                  </div>
+                </div>
+
+                {/* Decorative elements */}
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-400 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-blue-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+              </div>
+
+              {/* Card ขวา - ดูแลหน้างานตลอดการใช้งาน */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+                {/* Hover border effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl p-0.5">
+                  <div className="w-full h-full bg-white rounded-2xl"></div>
+                </div>
+
+                <div className="relative z-10 p-8">
+                  {/* Icon Section */}
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-gray-900 text-3xl">👥</span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="text-center">
+                    <h4 className="text-xl font-kanit font-bold text-gray-900 mb-3">
+                      ดูแลหน้างานตลอดการใช้งาน
+                    </h4>
+                    <p className="text-gray-600 font-inter leading-relaxed mb-6">
+                      บริการดูแลหน้างานครบวงจร ตลอดระยะเวลาการใช้งาน พร้อมทีมงานคอยดูแลและแก้ไขปัญหา
+                    </p>
+                  </div>
+                </div>
+
+                {/* Decorative elements */}
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-yellow-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
+      <section className="py-8 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+            <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
+              {/* Left Section - Contact Info */}
+              <div className="text-center lg:text-left">
+                <div className="flex items-center justify-center lg:justify-start space-x-3 mb-3">
+                  <img
+                    src="/public/images/logo.png"
+                    alt="Jaroensup Air Rental Logo"
+                    className="w-12 h-12 rounded-lg shadow-lg"
+                  />
+                  <h3 className="text-xl font-kanit font-bold text-white">
+                    📞 ติดต่อด่วน! สอบถามราคาได้เลย
+                  </h3>
+                </div>
+                <p className="text-blue-100 font-inter">
+                  พร้อมให้บริการทุกวัน 08:00 - 20:00 น.
+                </p>
+              </div>
+
+              {/* Middle Section - Phone Numbers */}
+              <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+                <div className="text-center">
+                  <p className="text-sm text-blue-100 font-inter mb-1">
+                    คุณหมวย
+                  </p>
+                  <a
+                    href="tel:0869750664"
+                    className="text-2xl font-kanit font-bold text-white hover:text-yellow-300 transition-colors duration-200"
+                  >
+                    086-975-0664
+                  </a>
+                </div>
+                <div className="hidden sm:block w-px h-8 bg-white/30"></div>
+                <div className="text-center">
+                  <p className="text-sm text-blue-100 font-inter mb-1">
+                    คุณแม็กซ์
+                  </p>
+                  <a
+                    href="tel:0969584422"
+                    className="text-2xl font-kanit font-bold text-white hover:text-yellow-300 transition-colors duration-200"
+                  >
+                    096-958-4422
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Section - Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="tel:0869750664"
+                  className="px-6 py-3 bg-yellow-500 text-gray-900 font-kanit font-semibold rounded-xl shadow-lg hover:bg-yellow-400 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-300 text-center"
+                >
+                  📞 โทรเลย
+                </a>
+                <div className="flex items-center space-x-3">
+                  <img
+                    src="/line-qr.png"
+                    alt="Line QR Code"
+                    className="w-12 h-12 rounded-lg shadow"
+                  />
+                  <div className="text-white">
+                    <p className="text-sm font-kanit font-semibold">Line</p>
+                    <p className="text-xs text-blue-100 font-inter">
+                      @jaroensupair
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Portfolio Gallery Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Wave Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="portfolioWave1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#F0F9FF" stopOpacity="0.6"/>
+                <stop offset="50%" stopColor="#FFFBEB" stopOpacity="0.4"/>
+                <stop offset="100%" stopColor="#F0FDF4" stopOpacity="0.6"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,150 Q200,100 400,150 T800,150 Q1000,200 1200,150 L1200,800 L0,800 Z" fill="url(#portfolioWave1)" opacity="0.4"/>
+            <path d="M0,400 Q300,350 600,400 T1200,400 L1200,800 L0,800 Z" fill="url(#portfolioWave1)" opacity="0.3"/>
+          </svg>
+        </div>
+
+        {/* Floating Portfolio Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 right-16 w-20 h-20 bg-blue-400/15 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-80 left-20 w-24 h-24 bg-yellow-400/15 rounded-full blur-xl animate-pulse delay-1500"></div>
+          <div className="absolute bottom-20 right-1/4 w-18 h-18 bg-green-400/15 rounded-full blur-xl animate-pulse delay-3000"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-kanit font-bold text-gray-900 mb-6">
@@ -777,183 +777,279 @@ const Home = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto mt-6 rounded-full"></div>
           </div>
 
-          {/* Portfolio Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Portfolio Item 1 - Featured */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 lg:col-span-2">
-              <img
-                src="/src/assets/images/IMG_0848.jpg"
-                alt="งานแต่งงาน - แอร์ 10 ตัน"
-                className="w-full h-64 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4">
-                    <h3 className="text-lg font-kanit font-bold text-gray-900 mb-1">
-                      งานแต่งงานหรูหรา
-                    </h3>
-                    <p className="text-sm text-gray-600 font-inter mb-2">
-                      แอร์ 10 ตัน - โรงแรม ABC กรุงเทพฯ
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <span className="bg-yellow-500 text-gray-900 px-3 py-1 rounded-full text-xs font-kanit font-semibold">
+          {/* Portfolio Masonry Layout */}
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            {/* Portfolio Item 1 - Featured Large */}
+            <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 break-inside-avoid mb-6">
+              <div className="relative">
+                <img
+                  src="/src/assets/images/IMG_0848.jpg"
+                  alt="งานแต่งงาน - แอร์ 10 ตัน"
+                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                
+                {/* Floating Badge */}
+                <div className="absolute top-6 right-6 bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 px-4 py-2 rounded-full text-sm font-kanit font-bold shadow-lg">
+                  ⭐ Featured
+                </div>
+              </div>
+              
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 shadow-md">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <span className="text-xs text-gray-500 font-inter uppercase tracking-wide">งานแต่งงาน</span>
+                  </div>
+                  <h3 className="text-lg font-kanit font-bold text-gray-900 mb-1">
+                    งานแต่งงานหรูหรา
+                  </h3>
+                  <p className="text-xs text-gray-600 font-inter mb-3 leading-relaxed">
+                    แอร์ 10 ตัน - โรงแรม ABC กรุงเทพฯ
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-yellow-500 text-gray-900 px-2 py-1 rounded-full text-xs font-kanit font-semibold">
                         10 ตัน
                       </span>
                       <span className="text-xs text-gray-500 font-inter">
-                        200 คน
+                        👥 200 คน
                       </span>
                     </div>
+                    <button className="text-blue-600 hover:text-blue-800 text-xs font-kanit font-semibold transition-colors">
+                      ดูรายละเอียด →
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Portfolio Item 2 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
-              <img
-                src="/src/assets/images/IMG_0849.jpg"
-                alt="งานอีเวนต์ - แอร์ 20 ตัน"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4">
-                    <h3 className="text-lg font-kanit font-bold text-gray-900 mb-1">
-                      งานอีเวนต์ใหญ่
-                    </h3>
-                    <p className="text-sm text-gray-600 font-inter mb-2">
-                      แอร์ 20 ตัน - ศูนย์ประชุม กรุงเทพฯ
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-kanit font-semibold">
+            {/* Portfolio Item 2 - Medium */}
+            <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 break-inside-avoid mb-6">
+              <div className="relative">
+                <img
+                  src="/src/assets/images/IMG_0849.jpg"
+                  alt="งานอีเวนต์ - แอร์ 20 ตัน"
+                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                
+                {/* Floating Badge */}
+                <div className="absolute top-6 right-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-kanit font-bold shadow-lg">
+                  🎪 อีเวนต์
+                </div>
+              </div>
+              
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-lg">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span className="text-xs text-gray-500 font-inter uppercase tracking-wide">งานอีเวนต์</span>
+                  </div>
+                  <h3 className="text-base font-kanit font-bold text-gray-900 mb-1">
+                    งานอีเวนต์ใหญ่
+                  </h3>
+                  <p className="text-xs text-gray-600 font-inter mb-3 leading-relaxed">
+                    แอร์ 20 ตัน - ศูนย์ประชุม กรุงเทพฯ
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-kanit font-semibold">
                         20 ตัน
                       </span>
                       <span className="text-xs text-gray-500 font-inter">
-                        500 คน
+                        👥 500 คน
                       </span>
                     </div>
+                    <button className="text-blue-600 hover:text-blue-800 text-xs font-kanit font-semibold transition-colors">
+                      ดูรายละเอียด →
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Portfolio Item 3 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
-              <img
-                src="/src/assets/images/IMG_0850.jpg"
-                alt="งานบวช - แอร์ 5 ตัน"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4">
-                    <h3 className="text-lg font-kanit font-bold text-gray-900 mb-1">
-                      งานบวชใหญ่
-                    </h3>
-                    <p className="text-sm text-gray-600 font-inter mb-2">
-                      แอร์ 5 ตัน - วัด ABC เชียงใหม่
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-kanit font-semibold">
+            {/* Portfolio Item 3 - Small */}
+            <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 break-inside-avoid mb-6">
+              <div className="relative">
+                <img
+                  src="/src/assets/images/IMG_0850.jpg"
+                  alt="งานบวช - แอร์ 5 ตัน"
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                
+                {/* Floating Badge */}
+                <div className="absolute top-6 right-6 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-kanit font-bold shadow-lg">
+                  🏛️ งานบวช
+                </div>
+              </div>
+              
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-lg">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-xs text-gray-500 font-inter uppercase tracking-wide">งานบวช</span>
+                  </div>
+                  <h3 className="text-base font-kanit font-bold text-gray-900 mb-1">
+                    งานบวชใหญ่
+                  </h3>
+                  <p className="text-xs text-gray-600 font-inter mb-3 leading-relaxed">
+                    แอร์ 5 ตัน - วัด ABC เชียงใหม่
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-kanit font-semibold">
                         5 ตัน
                       </span>
                       <span className="text-xs text-gray-500 font-inter">
-                        100 คน
+                        👥 100 คน
                       </span>
                     </div>
+                    <button className="text-blue-600 hover:text-blue-800 text-xs font-kanit font-semibold transition-colors">
+                      ดูรายละเอียด →
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Portfolio Item 4 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
-              <img
-                src="/src/assets/images/IMG_0853.jpg"
-                alt="งานสัมมนา - แอร์ 15 ตัน"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4">
-                    <h3 className="text-lg font-kanit font-bold text-gray-900 mb-1">
-                      งานสัมมนาบริษัท
-                    </h3>
-                    <p className="text-sm text-gray-600 font-inter mb-2">
-                      แอร์ 15 ตัน - บริษัท XYZ กรุงเทพฯ
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <span className="bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-kanit font-semibold">
+            {/* Portfolio Item 4 - Medium */}
+            <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 break-inside-avoid mb-6">
+              <div className="relative">
+                <img
+                  src="/src/assets/images/IMG_0853.jpg"
+                  alt="งานสัมมนา - แอร์ 15 ตัน"
+                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                
+                {/* Floating Badge */}
+                <div className="absolute top-6 right-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-kanit font-bold shadow-lg">
+                  🏢 สัมมนา
+                </div>
+              </div>
+              
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-lg">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <span className="text-xs text-gray-500 font-inter uppercase tracking-wide">งานสัมมนา</span>
+                  </div>
+                  <h3 className="text-base font-kanit font-bold text-gray-900 mb-1">
+                    งานสัมมนาบริษัท
+                  </h3>
+                  <p className="text-xs text-gray-600 font-inter mb-3 leading-relaxed">
+                    แอร์ 15 ตัน - บริษัท XYZ กรุงเทพฯ
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-purple-500 text-white px-2 py-1 rounded-full text-xs font-kanit font-semibold">
                         15 ตัน
                       </span>
                       <span className="text-xs text-gray-500 font-inter">
-                        300 คน
+                        👥 300 คน
                       </span>
                     </div>
+                    <button className="text-blue-600 hover:text-blue-800 text-xs font-kanit font-semibold transition-colors">
+                      ดูรายละเอียด →
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Portfolio Item 5 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
-              <img
-                src="/src/assets/images/IMG_0889.png"
-                alt="งานแสดงสินค้า - แอร์ 20 ตัน"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4">
-                    <h3 className="text-lg font-kanit font-bold text-gray-900 mb-1">
-                      งานแสดงสินค้า
-                    </h3>
-                    <p className="text-sm text-gray-600 font-inter mb-2">
-                      แอร์ 20 ตัน - ศูนย์แสดงสินค้า กรุงเทพฯ
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-kanit font-semibold">
+            {/* Portfolio Item 5 - Large */}
+            <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 break-inside-avoid mb-6">
+              <div className="relative">
+                <img
+                  src="/src/assets/images/IMG_0889.png"
+                  alt="งานแสดงสินค้า - แอร์ 20 ตัน"
+                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                
+                {/* Floating Badge */}
+                <div className="absolute top-6 right-6 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm font-kanit font-bold shadow-lg">
+                  🎪 แสดงสินค้า
+                </div>
+              </div>
+              
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
+                    <span className="text-xs text-gray-500 font-inter uppercase tracking-wide">งานแสดงสินค้า</span>
+                  </div>
+                  <h3 className="text-base font-kanit font-bold text-gray-900 mb-1">
+                    งานแสดงสินค้า
+                  </h3>
+                  <p className="text-xs text-gray-600 font-inter mb-3 leading-relaxed">
+                    แอร์ 20 ตัน - ศูนย์แสดงสินค้า กรุงเทพฯ
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-indigo-500 text-white px-2 py-1 rounded-full text-xs font-kanit font-semibold">
                         20 ตัน
                       </span>
                       <span className="text-xs text-gray-500 font-inter">
-                        800 คน
+                        👥 800 คน
                       </span>
                     </div>
+                    <button className="text-blue-600 hover:text-blue-800 text-xs font-kanit font-semibold transition-colors">
+                      ดูรายละเอียด →
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Portfolio Item 6 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
-              <img
-                src="/src/assets/images/IMG_0890.png"
-                alt="งานเลี้ยงสังสรรค์ - แอร์ 10 ตัน"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4">
-                    <h3 className="text-lg font-kanit font-bold text-gray-900 mb-1">
-                      งานเลี้ยงสังสรรค์
-                    </h3>
-                    <p className="text-sm text-gray-600 font-inter mb-2">
-                      แอร์ 10 ตัน - โรงแรม DEF ภูเก็ต
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <span className="bg-yellow-500 text-gray-900 px-3 py-1 rounded-full text-xs font-kanit font-semibold">
+            {/* Portfolio Item 6 - Small */}
+            <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 break-inside-avoid mb-6">
+              <div className="relative">
+                <img
+                  src="/src/assets/images/IMG_0890.png"
+                  alt="งานเลี้ยงสังสรรค์ - แอร์ 10 ตัน"
+                  className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                
+                {/* Floating Badge */}
+                <div className="absolute top-6 right-6 bg-gradient-to-r from-pink-500 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-kanit font-bold shadow-lg">
+                  🎉 ปาร์ตี้
+                </div>
+              </div>
+              
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-lg">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
+                    <span className="text-xs text-gray-500 font-inter uppercase tracking-wide">งานเลี้ยง</span>
+                  </div>
+                  <h3 className="text-base font-kanit font-bold text-gray-900 mb-1">
+                    งานเลี้ยงสังสรรค์
+                  </h3>
+                  <p className="text-xs text-gray-600 font-inter mb-3 leading-relaxed">
+                    แอร์ 10 ตัน - โรงแรม DEF ภูเก็ต
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-pink-500 text-white px-2 py-1 rounded-full text-xs font-kanit font-semibold">
                         10 ตัน
                       </span>
                       <span className="text-xs text-gray-500 font-inter">
-                        150 คน
+                        👥 150 คน
                       </span>
                     </div>
+                    <button className="text-blue-600 hover:text-blue-800 text-xs font-kanit font-semibold transition-colors">
+                      ดูรายละเอียด →
+                    </button>
                   </div>
                 </div>
               </div>
@@ -970,8 +1066,32 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden">
+        {/* Wave Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="whyChooseWave1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.1"/>
+                <stop offset="50%" stopColor="#FEF3C7" stopOpacity="0.08"/>
+                <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.1"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,200 Q300,150 600,200 T1200,200 L1200,800 L0,800 Z" fill="url(#whyChooseWave1)" opacity="0.3"/>
+            <path d="M0,500 Q400,450 800,500 T1200,500 L1200,800 L0,800 Z" fill="url(#whyChooseWave1)" opacity="0.2"/>
+            <path d="M0,700 Q200,650 400,700 T800,700 Q1000,750 1200,700 L1200,800 L0,800 Z" fill="url(#whyChooseWave1)" opacity="0.15"/>
+          </svg>
+        </div>
+
+        {/* Floating Why Choose Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-32 left-12 w-16 h-16 bg-white/10 rounded-full blur-lg animate-pulse"></div>
+          <div className="absolute top-64 right-16 w-20 h-20 bg-yellow-400/20 rounded-full blur-lg animate-pulse delay-1000"></div>
+          <div className="absolute bottom-32 left-1/4 w-14 h-14 bg-white/10 rounded-full blur-lg animate-pulse delay-2000"></div>
+          <div className="absolute top-96 right-1/3 w-12 h-12 bg-yellow-400/15 rounded-full blur-lg animate-pulse delay-500"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-kanit font-bold text-white mb-6">
@@ -1086,8 +1206,31 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="py-20 bg-white relative overflow-hidden">
+        {/* Wave Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="contactWave1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#EFF6FF" stopOpacity="0.5"/>
+                <stop offset="50%" stopColor="#FEF3C7" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="#ECFDF5" stopOpacity="0.5"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,100 Q200,50 400,100 T800,100 Q1000,150 1200,100 L1200,800 L0,800 Z" fill="url(#contactWave1)" opacity="0.4"/>
+            <path d="M0,300 Q300,250 600,300 T1200,300 L1200,800 L0,800 Z" fill="url(#contactWave1)" opacity="0.3"/>
+            <path d="M0,600 Q400,550 800,600 T1200,600 L1200,800 L0,800 Z" fill="url(#contactWave1)" opacity="0.2"/>
+          </svg>
+        </div>
+
+        {/* Floating Contact Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-24 left-20 w-18 h-18 bg-blue-500/10 rounded-full blur-lg animate-bounce"></div>
+          <div className="absolute top-72 right-20 w-22 h-22 bg-yellow-500/10 rounded-full blur-lg animate-bounce delay-1000"></div>
+          <div className="absolute bottom-24 left-1/3 w-16 h-16 bg-green-500/10 rounded-full blur-lg animate-bounce delay-2000"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-kanit font-bold text-gray-900 mb-4">
