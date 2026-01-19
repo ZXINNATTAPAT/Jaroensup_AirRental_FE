@@ -4,6 +4,14 @@ import AirConditioner3D from "../../components/AirConditioner3D";
 import SEO from "../../components/SEO";
 // import ThemeExample from "../../components/ThemeExample";
 
+// Import images from assets
+import IMG_0848 from "../../assets/images/IMG_0848.jpg";
+import IMG_0849 from "../../assets/images/IMG_0849.jpg";
+import IMG_0850 from "../../assets/images/IMG_0850.jpg";
+import IMG_0853 from "../../assets/images/IMG_0853.jpg";
+import IMG_0889 from "../../assets/images/IMG_0889.png";
+import IMG_0890 from "../../assets/images/IMG_0890.png";
+
 const translations = {
   th: {
     heroTitle: "บริการให้เช่าแอร์ขนาดใหญ่ ขนาด 5 ตัน 10 ตัน 20 ตัน",
@@ -150,7 +158,7 @@ const Home = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
           style={{
-            backgroundImage: "url(/src/assets/images/IMG_0848.jpg)",
+            backgroundImage: `url(${IMG_0848})`,
             height: "100vh",
           }}
         ></div>
@@ -286,7 +294,7 @@ const Home = () => {
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start space-x-3 mb-3">
                   <img
-                    src="/public/images/logo.png"
+                    src="/images/logo.png"
                     alt="Jaroensup Air Rental Logo"
                     className="w-12 h-12 rounded-lg shadow-lg"
                   />
@@ -721,7 +729,7 @@ const Home = () => {
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start space-x-3 mb-3">
                   <img
-                    src="/public/images/logo.png"
+                    src="/images/logo.png"
                     alt="Jaroensup Air Rental Logo"
                     className="w-12 h-12 rounded-lg shadow-lg"
                   />
@@ -833,7 +841,7 @@ const Home = () => {
             <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 break-inside-avoid mb-6">
               <div className="relative">
                 <img
-                  src="/src/assets/images/IMG_0848.jpg"
+                  src={IMG_0848}
                   alt="งานแต่งงาน - แอร์ 10 ตัน"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
@@ -879,7 +887,7 @@ const Home = () => {
             <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 break-inside-avoid mb-6">
               <div className="relative">
                 <img
-                  src="/src/assets/images/IMG_0849.jpg"
+                  src={IMG_0849}
                   alt="งานอีเวนต์ - แอร์ 20 ตัน"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
@@ -925,7 +933,7 @@ const Home = () => {
             <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 break-inside-avoid mb-6">
               <div className="relative">
                 <img
-                  src="/src/assets/images/IMG_0850.jpg"
+                  src={IMG_0850}
                   alt="งานบวช - แอร์ 5 ตัน"
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
@@ -971,7 +979,7 @@ const Home = () => {
             <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 break-inside-avoid mb-6">
               <div className="relative">
                 <img
-                  src="/src/assets/images/IMG_0853.jpg"
+                  src={IMG_0853}
                   alt="งานสัมมนา - แอร์ 15 ตัน"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
@@ -1017,7 +1025,7 @@ const Home = () => {
             <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 break-inside-avoid mb-6">
               <div className="relative">
                 <img
-                  src="/src/assets/images/IMG_0889.png"
+                  src={IMG_0889}
                   alt="งานแสดงสินค้า - แอร์ 20 ตัน"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
@@ -1063,7 +1071,7 @@ const Home = () => {
             <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 break-inside-avoid mb-6">
               <div className="relative">
                 <img
-                  src="/src/assets/images/IMG_0890.png"
+                  src={IMG_0890}
                   alt="งานเลี้ยงสังสรรค์ - แอร์ 10 ตัน"
                   className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
