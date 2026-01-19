@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import AirConditioner3D from "../../components/AirConditioner3D";
+import SEO from "../../components/SEO";
 // import ThemeExample from "../../components/ThemeExample";
 
 const translations = {
@@ -57,8 +58,57 @@ const Home = () => {
     };
   }, []);
 
+  // SEO structured data
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Air Conditioner Rental",
+    "name": language === "th" 
+      ? "บริการให้เช่าแอร์ขนาดใหญ่ ขนาด 5 ตัน 10 ตัน 20 ตัน"
+      : "Large Air Conditioner Rental Service 5 Ton 10 Ton 20 Ton",
+    "description": language === "th"
+      ? "บริการครบวงจร พร้อมทีมงานมืออาชีพ ประสบการณ์กว่า 20 ปี รองรับงานอีเวนต์ งานแต่ง งานบวช คอนเสิร์ต โรงงาน และกิจกรรมทุกขนาด"
+      : "Complete service with professional team, over 20 years experience. Perfect for events, weddings, ceremonies, concerts, factories and activities of all sizes.",
+    "provider": {
+      "@type": "Organization",
+      "name": "เจริญทรัพย์แอร์เช่า",
+      "alternateName": "Jaroensup Air Rental",
+      "url": "https://jaroensupairrental.com",
+      "telephone": "086-975-0664",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "กรุงเทพฯ",
+        "addressCountry": "TH"
+      }
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Thailand"
+    },
+    "offers": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": language === "th" ? "เช่าแอร์ 5 ตัน 10 ตัน 20 ตัน" : "5 Ton 10 Ton 20 Ton AC Rental"
+      }
+    }
+  };
+
   return (
     <>
+      <SEO
+        title={language === "th"
+          ? "เช่าแอร์ | บริการให้เช่าแอร์และพัดลมไอน้ำทั่วประเทศ | เจริญทรัพย์แอร์เช่า"
+          : "Air Conditioner Rental | AC & Water Fan Rental Service Thailand | Jaroensup Air Rental"}
+        description={language === "th"
+          ? "บริการให้เช่าแอร์และพัดลมไอน้ำ พร้อมติดตั้งทั่วประเทศ ราคาประหยัด เหมาะสำหรับงานอีเวนต์ งานแต่ง งานโรงงาน โทร 086-975-0664"
+          : "Air conditioner and water fan rental service with installation throughout Thailand. Affordable prices perfect for events, weddings, factories. Call 086-975-0664"}
+        keywords={language === "th"
+          ? "เช่าแอร์, ให้เช่าพัดลมไอน้ำ, air conditioner rental service Thailand, เช่าแอร์กรุงเทพ, เช่าแอร์เชียงใหม่, เช่าแอร์ภูเก็ต, พัดลมไอน้ำเช่า, แอร์เคลื่อนที่เช่า, แอร์ตู้เช่า, งานแต่งงาน, งานอีเวนต์, โรงงานอุตสาหกรรม"
+          : "air conditioner rental, water fan rental, AC rental Thailand, Bangkok AC rental, Chiang Mai AC rental, Phuket AC rental, portable AC rental, cabinet AC rental, wedding event, factory industrial"}
+        url={typeof window !== "undefined" ? window.location.origin : "https://jaroensupairrental.com"}
+        structuredData={structuredData}
+      />
       <Navbar />
 
       {/* Hero Section */}

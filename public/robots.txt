@@ -1,0 +1,33 @@
+# robots.txt for Jaroensup Air Rental
+
+User-agent: *
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /login
+Disallow: /register
+Disallow: /checkout
+Disallow: /add-to-cart
+Disallow: /profile-setting
+Disallow: /settings
+Disallow: /history
+Disallow: /change-password
+Disallow: /line-profile
+Disallow: /register-tech
+Disallow: /forgot-password
+Disallow: /reset-password/
+
+# Allow important pages
+Allow: /
+Allow: /services
+Allow: /product
+Allow: /experience
+Allow: /contact
+Allow: /services/rental/
+
+# Sitemap location
+Sitemap: https://jaroensupairrental.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
