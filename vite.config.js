@@ -8,7 +8,7 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    minify: 'terser',
+    minify: 'esbuild', // ใช้ esbuild แทน terser (เร็วกว่าและไม่ต้องติดตั้งเพิ่ม)
     rollupOptions: {
       output: {
         manualChunks: {

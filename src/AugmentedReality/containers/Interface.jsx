@@ -33,7 +33,6 @@ const translations = {
     startAnimation: "Start Animation",
     stopAnimation: "Stop Animation",
     noAppointments: "No available appointments",
-    selectAppointment: "Select an appointment",
   },
   th: {
     menuOpen: "☰ เมนู",
@@ -58,7 +57,6 @@ const translations = {
     startAnimation: "เริ่มการแสดงผลความเย็น",
     stopAnimation: "หยุดการแสดงผลความเย็น",
     noAppointments: "ไม่มีงานที่สามารถเลือกได้",
-    selectAppointment: "เลือกงาน",
   },
 };
 

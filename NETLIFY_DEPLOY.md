@@ -50,11 +50,27 @@ VITE_SERVER_URL=https://your-backend-api-url.com
 - ตรวจสอบว่าใส่ `VITE_` prefix แล้ว
 - ตรวจสอบว่า rebuild หลังเพิ่ม environment variables
 
-### ปัญหา: Build ล้มเหลว
+### ปัญหา: Build ล้มเหลว - "terser not found"
+**แก้ไข:** 
+- โปรเจกต์นี้ใช้ `esbuild` แทน `terser` แล้ว (เร็วกว่าและไม่ต้องติดตั้งเพิ่ม)
+- ตรวจสอบ `vite.config.js` ว่าใช้ `minify: 'esbuild'`
+
+### ปัญหา: Build ล้มเหลว - "Duplicate key"
+**แก้ไข:**
+- ตรวจสอบว่ามี duplicate keys ใน object literals
+- ใช้ ESLint หรือตรวจสอบ build logs เพื่อหาตำแหน่งที่ซ้ำ
+
+### ปัญหา: Build ล้มเหลว - อื่นๆ
 **แก้ไข:**
 - ตรวจสอบว่า Node version ถูกต้อง (18)
 - ตรวจสอบว่า dependencies ติดตั้งครบ (`npm install`)
 - ดู build logs ใน Netlify dashboard
+- รัน `npm run build` ใน local เพื่อทดสอบก่อน deploy
+
+### ปัญหา: Browserslist outdated
+**แก้ไข:**
+- รัน `npm run update-browserslist` หรือ `npx update-browserslist-db@latest`
+- ไม่ critical แต่ควรอัปเดตเป็นครั้งคราว
 
 ## Custom Domain
 1. ไปที่ **Site settings** → **Domain management**
